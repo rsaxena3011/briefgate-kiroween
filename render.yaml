@@ -1,0 +1,11 @@
+# Render free-tier deploy for BriefGate (no card needed for the free plan).
+# Create the Web Service from the public repo in the Render dashboard and
+# point it at this file, or: render blueprint launch. The service builds the
+# Dockerfile above and serves the whole product on one URL.
+services:
+  - type: web
+    name: briefgate
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health

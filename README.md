@@ -42,6 +42,14 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 # sample-pack/brief.json + sample-pack/approved_logo.png
 ```
 
+## Deploy (one URL, no login wall)
+
+```bash
+docker build -t briefgate . && docker run -p 8000:8000 briefgate
+# or on Render's free tier: create the Web Service from this repo —
+# render.yaml points at the Dockerfile (health check: /api/health)
+```
+
 Requirements: Python 3.12, FFmpeg 6+ (`ffmpeg`, `ffprobe` on PATH), Node 20+
 (only to rebuild the frontend; the built bundle ships in the repo).
 
