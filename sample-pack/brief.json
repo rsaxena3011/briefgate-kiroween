@@ -1,0 +1,43 @@
+{
+  "project": "SaxenaWave \u2014 Launch Film (Sample)",
+  "expected_duration_s": 90,
+  "duration_tolerance_s": 2,
+  "scenes": [
+    {
+      "id": "s01",
+      "description": "Opening title card, deep navy background, SaxenaWave logo top right"
+    },
+    {
+      "id": "s02",
+      "description": "Product hero shot, teal background, product centre frame"
+    },
+    {
+      "id": "s03",
+      "description": "Customer testimonial, warm amber background, speaker centre frame"
+    },
+    {
+      "id": "s04",
+      "description": "Drone flyover, city skyline at dusk, slate grey background"
+    },
+    {
+      "id": "s05",
+      "description": "Closing call to action, deep green background, SaxenaWave logo top right"
+    },
+    {
+      "id": "s06",
+      "description": "B-roll montage, rich purple background, fast cuts"
+    },
+    {
+      "id": "s07",
+      "description": "End card, dark crimson background, SaxenaWave logo top right"
+    }
+  ],
+  "brand": {
+    "logo_ref": "approved_logo.png",
+    "logo_required_in": "all"
+  },
+  "technical": {
+    "max_black_frame_s": 0.5,
+    "max_silence_s": 2.0
+  }
+}

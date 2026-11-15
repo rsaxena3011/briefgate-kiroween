@@ -1,0 +1,37 @@
+{
+  "sample_video.mp4": {
+    "expected_findings": [
+      {
+        "type": "logo_mismatch",
+        "timestamp_in_s": 43.0,
+        "tolerance_s": 1.0,
+        "scene": "s03",
+        "note": "wrong NovaCorp logo 42-45s"
+      },
+      {
+        "type": "scene_missing",
+        "scene_id": "s04",
+        "note": "drone flyover absent"
+      },
+      {
+        "type": "black_frame",
+        "start_s": 60.0,
+        "duration_s": 3.0,
+        "tolerance_s": 0.3
+      },
+      {
+        "type": "silence",
+        "start_s": 60.0,
+        "duration_s": 3.0,
+        "tolerance_s": 0.3
+      }
+    ],
+    "expected_blockers": 3,
+    "expected_duration_s": 90
+  },
+  "control_video.mp4": {
+    "expected_findings": [],
+    "expected_blockers": 0,
+    "expected_duration_s": 90
+  }
+}

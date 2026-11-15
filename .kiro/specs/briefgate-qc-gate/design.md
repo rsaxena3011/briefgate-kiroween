@@ -18,8 +18,12 @@ browser ──► FastAPI (main.py) ──► checks.py ──► media.py (ffmp
 1. Upload → validate limits (Req 1) → validate brief schema (Req 2) →
    create run record (inputs stored by SHA-256 hash).
 2. `ffprobe`: duration, resolution, streams. Unreadable stream → `stream_error`.
-3. Shot boundaries: `ffmpeg -vf select='gt(scene,0.30)',showinfo` — one shot
-   per scene change; keyframe = midpoint frame of each shot, extracted as PNG.
+3. Shot boundaries: OpenCV colour-change detection (2 fps sampling, cut
+   when the median colour of the frame centre jumps >30 in RGB distance).
+   Chosen over ffmpeg's `scene` filter because that score is luma-driven
+   and missed the green→slate and slate→purple hard cuts in the sample
+   pack; one keyframe per shot (midpoint) plus frames at logo-candidate
+   moments.
 4. Logo-candidate frames: one frame per second inside logo-required shots,
    plus the exact midpoint, so the 0:43 plant is sampled.
 
