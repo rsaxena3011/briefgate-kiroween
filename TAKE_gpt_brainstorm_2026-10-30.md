@@ -1,0 +1,25 @@
+# C119 Kiroween 2026: GPT brainstorm take
+Collected 2026-10-30 ~06:37 IST (browser task ran 06:30-06:37 IST; generation 4m 5s). ChatGPT, Vision Kumar, Think mode ON. Chat: https://chatgpt.com/c/6ae3ec3b-3538-83ee-a6ed-ef0d6b05cfba. Minimal prompt per protocol. Notion legs blocked until 2026-11-21 (recorded).
+
+## GPT take (condensed, structure preserved)
+
+Facts per GPT (verify at recon; the 2026 Official Rules were NOT yet published when GPT checked): build opens Oct 31 01:30 IST; India deadline Dec 5 03:30 IST (target submit Dec 4); judging Jan 11-22, 2027; winners Feb 4, 2027. Prizes: 1st $30,000, 2nd $20,000, 3rd $10,000, Best Resurrection $5,000, Best Frankenstein $5,000, Best Skeleton Crew $5,000, Best Costume Contest $5,000, Best Startup Project $10,000, Best Ghost of Kiroween Past $2,000, Best Kiro Crew App $1,000, Best Demo $1,000, four student prizes $1,500 each (students only, not us). Bonus Blog Prize: first 100 eligible submissions with a qualifying public project blog get 2,000 Kiro credits each. Social Blitz: five winners get 3 months Kiro Pro+. Multiple prize routes exist, but the primary project should still aim at an overall award.
+
+Category call: Frankenstein (unusual combination of technologies). Resurrection is distinctive; Skeleton Crew is double work for a solo builder; Costume Contest alone is weak technically.
+
+Recommended project: "FrameProof", an AI production QC assistant that catches mistakes before a final video reaches the client. Flow: import brief (shot list, script, brand guidelines, approved references) + video; process into shots/keyframes/audio/timecodes; run multimodal checks; show evidence-backed findings (timestamp, screenshot, expected vs observed, confidence); human approves/dismisses; export report. Build FIVE reliable capabilities only: shot verification (missing/out-of-order scenes), visual continuity (wardrobe/props/location), brand compliance (logo/on-screen text), script verification (missing dialogue), technical QC (black frames, duration, audio peaks; deterministic tooling). Differentiator: evidence, never a bare AI claim. Demo uses self-made sample footage with deliberately planted mistakes.
+
+Kiro usage is itself judged: use Specs (requirements/architecture/tasks before features), Steering (including an explicit rule that every reported defect must carry traceable visual/audio evidence and may never invent a timestamp or observation), agent hooks (tests/lint on file changes), custom agents + sub-agents (media processing, testing, UI review), MCP where genuine, checkpoints for safe experiments. Preserve the .kiro config, specs, steering, hooks, agent definitions and dev history as submission evidence (2025 required it in the public repo; 2026 unconfirmed).
+
+Architecture (a proper app, not single-file): React/TypeScript frontend; Python/FastAPI backend; FFmpeg/FFprobe + OpenCV media engine; vision model + transcription for findings; SQLite; PDF/JSON report export with audit trail; provider-swappable AI layer. No sensitive client footage in the demo; create own sample assets.
+
+Roadmap: Oct 31-Nov 4 setup + MVP upload-to-result flow (do NOT create the project/repo before the build period opens; the new-project requirement is explicit); Nov 5-10 ingestion; Nov 11-16 intelligence; Nov 17-21 evidence system; Nov 22-25 polish; Nov 26-29 adversarial testing; Nov 30-Dec 2 submission assets; Dec 3 freeze; Dec 4 buffer/submit. GPT explicitly says protect the imminent Meta (C099) and YouCam (C088) deadlines and start the main Kiroween block Nov 5.
+
+Demo (~2:30): problem 0:00-0:20; upload brief + video 0:20-0:45; pipeline 0:45-1:15; timestamped defects with evidence 1:15-1:55; approve + export 1:55-2:15; tech + Kiro workflow 2:15-2:30. Secondary targets: Best Demo ($1,000, plays to boss's craft), Bonus Blog (publish a real build story early), Best Startup Project ($10,000) only if genuinely eligible (2025 required founder confirmation + LinkedIn + startup website; 2026 unconfirmed). Study the 2025 gallery (Faxi, BlueKai, ELIZA EXHUMED) for originality.
+
+Verify when the full rules publish: submission requirements + whether a live URL is mandatory, video format/duration/hosting, repo + licensing, team size, country eligibility, multiple submissions, Startup/Ghost/Kiro Crew specifics, Kiro plan/credit benefits.
+
+## Doom notes (not GPT's words)
+- NAME COLLISION: "FrameProof" is already the name of boss's C056 OpenCV entry (eligibility confirmed in writing by Phil Nelson, 2026-10-12). If this concept is picked, it needs a different name for Kiroween, and the concept must be a NEW project built inside the Kiroween window regardless.
+- CONCEPT OVERLAP: FrameProof-QC sits very close to C099 Cutline Studio (Meta hackathon, continuity ledger with frame evidence). Same evidence-first QC DNA in two live competitions; if both proceed, the products must be visibly differentiated (Cutline = take-vs-take continuity for editors; Kiroween concept = brief-vs-final QC gate) and no code/asset reuse across entries.
+- Argon leg for C119 still pending at the time of this file; merge follows when it lands.

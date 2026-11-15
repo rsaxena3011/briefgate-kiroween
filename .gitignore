@@ -1,0 +1,10 @@
+# BriefGate — NEVER gitignore .kiro (judges inspect it; hiding it risks disqualification)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+runs/
+app/frontend/node_modules/
+app/frontend/dist/
+*.log
+.DS_Store
