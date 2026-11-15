@@ -77,8 +77,7 @@ def detect_shots(path: str | Path, duration: float,
             bgr = np.median(crop.reshape(-1, 3), axis=0)
             rgb = (float(bgr[2]), float(bgr[1]), float(bgr[0]))
             if prev_rgb is not None:
-                import math as _m
-                if _m.dist(rgb, prev_rgb) > threshold and t - cuts[-1] >= 1.0:
+                if math.dist(rgb, prev_rgb) > threshold and t - cuts[-1] >= 1.0:
                     cuts.append(round(t, 2))
             prev_rgb = rgb
         idx += 1

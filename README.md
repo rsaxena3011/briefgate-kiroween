@@ -37,6 +37,7 @@ human approves or dismisses each flag. A QC report exports as **PDF + JSON**.
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python scripts/make_sample_pack.py   # self-made sample footage only
+cd app/frontend && npm install && npm run build && cd ../..   # build the UI bundle
 .venv/bin/uvicorn app.backend.main:app --port 8000
 # open http://localhost:8000 — upload sample-pack/sample_video.mp4 +
 # sample-pack/brief.json + sample-pack/approved_logo.png
@@ -51,7 +52,7 @@ docker build -t briefgate . && docker run -p 8000:8000 briefgate
 ```
 
 Requirements: Python 3.12, FFmpeg 6+ (`ffmpeg`, `ffprobe` on PATH), Node 20+
-(only to rebuild the frontend; the built bundle ships in the repo).
+(to build the frontend once; the Dockerfile does the whole build in one step).
 
 ## Sample pack
 

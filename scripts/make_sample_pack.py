@@ -118,16 +118,12 @@ def segment(name: str, rgb: tuple, text: str, dur: float, logo: Path | None,
     hexcol = "0x%02x%02x%02x" % rgb
     filt = f"[0:v][1:v]overlay=W-w-40:40,drawtext=fontfile={FONT}:text='{text}':fontsize=64:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2"
     cmd = ["ffmpeg", "-y", "-v", "error",
-           "-f", "lavfi", "-i", f"color=c={hexcol}:s={W}x{H}:d={dur}:r={FPS}"]
-    if logo is not None:
-        cmd += ["-i", str(logo)]
-    else:
-        cmd += ["-i", str(OUT / "approved_logo.png")]  # placeholder, unused
+           "-f", "lavfi", "-i", f"color=c={hexcol}:s={W}x{H}:d={dur}:r={FPS}",
+           "-i", str(logo)]
     cmd += ["-f", "lavfi", "-i",
             ("sine=frequency=440:sample_rate=44100:duration=%s" % dur) if audio
             else f"anullsrc=channel_layout=mono:sample_rate=44100:d={dur}",
-            "-filter_complex", filt if logo is not None else
-            f"[0:v]drawtext=fontfile={FONT}:text='{text}':fontsize=64:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2",
+            "-filter_complex", filt,
             "-map", "0:v", "-map", "2:a", "-t", str(dur),
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(FPS),
             "-c:a", "aac", "-b:a", "96k", "-ac", "1", "-ar", "44100",

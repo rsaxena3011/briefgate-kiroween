@@ -131,7 +131,6 @@ def run_checks(video_path: Path, brief: dict, logo_ref: Path,
     last_matched_id: str | None = None
     for sc in scenes:
         want_colours = _colour_words(sc["description"])
-        want_tokens = _tokens(sc["description"])
         hit = None
         for j in range(pointer, len(scene_shots)):
             sf = scene_shots[j]

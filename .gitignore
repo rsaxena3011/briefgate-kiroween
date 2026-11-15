@@ -6,5 +6,6 @@ __pycache__/
 runs/
 app/frontend/node_modules/
 app/frontend/dist/
+app/frontend/tsconfig.tsbuildinfo
 *.log
 .DS_Store
