@@ -19,6 +19,7 @@ from . import checks, media, reports, store
 
 ROOT = Path(__file__).resolve().parent.parent.parent  # repo root
 RUNS_DIR = ROOT / "runs"
+RUNS_DIR.mkdir(parents=True, exist_ok=True)
 DB = RUNS_DIR / "briefgate.db"
 FRONTEND_DIST = Path(__file__).resolve().parent.parent / "frontend" / "dist"
 
